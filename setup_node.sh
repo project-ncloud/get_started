@@ -15,7 +15,11 @@ cd node_server
 git clone https://github.com/project-ncloud/samba.git
 
 # Creating Virtual environment
-python -m venv venv
+if [[ "$OSTYPE" == "msys" ]]; then
+    python -m venv venv
+else
+    python3 -m venv venv
+fi;
 
 # Activating Venv for installing dependencies
 . venv/*/activate

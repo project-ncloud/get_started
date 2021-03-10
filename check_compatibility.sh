@@ -40,6 +40,7 @@ if [[ "$OSTYPE" == "msys" ]]; then
 else
     check_unix_package "nodejs" "NodeJS"
     check_unix_package "python3" "Python"
+    check_unix_package "python3-venv" "Python VENV" # apt-get install python3-venv
     check_unix_package "mongodb-org" "MongoDB"
     check_unix_package "samba" "Samba"
     check_unix_package "samba-common-bin" "Samba common bin"

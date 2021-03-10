@@ -15,6 +15,12 @@ cd ncloud
 # Installing dependencies
 npm install
 
+# Installing serve as global dependency
+npm install -g serve
+
+# Compile Production build
+npm run-script build
+
 echo ""
 echo "Done..."
 echo ""

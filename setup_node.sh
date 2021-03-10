@@ -2,7 +2,7 @@
 
 # Remove OLD Server if available
 if [[ -d "node_server" ]]; then
-    rm -rf master_server
+    rm -rf node_server
 fi;
 
 # Getting server from github

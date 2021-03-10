@@ -46,7 +46,7 @@ if [[ "$OSTYPE" == "msys" ]]; then
     mkdir -p etc/samba/
     touch etc/samba/smb.conf
 else
-    HOSTNAME=$(hostname -I)
+    HOSTNAME=$(hostname -I | cut -d' ' -f1)
     CONFIG_FILE="/etc/samba/smb.conf"
 fi;
 

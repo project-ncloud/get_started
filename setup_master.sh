@@ -46,7 +46,7 @@ read ADMIN_KEY
 if [[ "$OSTYPE" == "msys" ]]; then
     HOSTNAME="127.0.0.1"
 else
-    HOSTNAME=$(hostname -I)
+    HOSTNAME=$(hostname -I | cut -d' ' -f1)
 fi;
 
 # Genarating environment file for master

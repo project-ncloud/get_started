@@ -38,6 +38,7 @@ if [[ "$OSTYPE" == "msys" ]]; then
     check_env_package "Python" "Python"
     check_win_package "C:/Program Files/MongoDB/Server/" "MongoDB"
 else
+    check_unix_package "git" "Git"
     check_unix_package "nodejs" "NodeJS"
     check_unix_package "python3" "Python"
     check_unix_package "mongodb-org" "MongoDB"

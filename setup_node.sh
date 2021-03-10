@@ -14,21 +14,9 @@ cd node_server
 # Getting samba package from github
 git clone https://github.com/project-ncloud/samba.git
 
-# Creating Virtual environment
-if [[ "$OSTYPE" == "msys" ]]; then
-    python -m venv venv
-else
-    python3 -m venv venv
-fi;
-
-# Activating Venv for installing dependencies
-. venv/*/activate
-
 # Installing Dependencies
-pip3 install -r requirements.txt
+sudo pip3 install -r requirements.txt
 
-# Deactivate the env and exit
-deactivate
 
 # Genarating KEY For master
 echo "Enter Master KEY: "  

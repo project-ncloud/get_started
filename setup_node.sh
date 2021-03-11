@@ -14,17 +14,9 @@ cd node_server
 # Getting samba package from github
 git clone https://github.com/project-ncloud/samba.git
 
-# Creating Virtual environment
-python -m venv venv
-
-# Activating Venv for installing dependencies
-. venv/*/activate
-
 # Installing Dependencies
-pip3 install -r requirements.txt
+sudo pip3 install -r requirements.txt
 
-# Deactivate the env and exit
-deactivate
 
 # Genarating KEY For master
 echo "Enter Master KEY: "  
@@ -42,7 +34,7 @@ if [[ "$OSTYPE" == "msys" ]]; then
     mkdir -p etc/samba/
     touch etc/samba/smb.conf
 else
-    HOSTNAME=$(hostname -I)
+    HOSTNAME=$(hostname -I | cut -d' ' -f1)
     CONFIG_FILE="/etc/samba/smb.conf"
 fi;
 
@@ -55,7 +47,7 @@ PORT=7000
 TYPE=dev
 ADMIN_USER=admin
 ADMIN_KEY=$ADMIN_KEY
-RESTRICT_KEYWORD=raspberry_pi_$ADMIN_USER
+RESTRICT_KEYWORD=raspberry_pi_admin
 EOF
 
 

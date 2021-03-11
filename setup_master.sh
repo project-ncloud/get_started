@@ -19,7 +19,11 @@ git clone https://github.com/project-ncloud/master_server.git
 cd master_server
 
 # Creating Virtual environment
-python -m venv venv
+if [[ "$OSTYPE" == "msys" ]]; then
+    python -m venv venv
+else
+    python3 -m venv venv
+fi;
 
 # Activating Venv for installing dependencies
 . venv/*/activate
@@ -42,7 +46,7 @@ read ADMIN_KEY
 if [[ "$OSTYPE" == "msys" ]]; then
     HOSTNAME="127.0.0.1"
 else
-    HOSTNAME=$(hostname -I)
+    HOSTNAME=$(hostname -I | cut -d' ' -f1)
 fi;
 
 # Genarating environment file for master
